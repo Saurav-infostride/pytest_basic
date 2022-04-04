@@ -1,0 +1,10 @@
+2022-04-04 19:08:40,417: DEBUG: (levelname)s: This is a debug message
+2022-04-04 19:08:40,417: INFO: (levelname)s: This is a info message
+2022-04-04 19:08:40,417: WARNING: (levelname)s: This is a warning message
+2022-04-04 19:08:40,417: ERROR: (levelname)s: This is a error message
+2022-04-04 19:08:40,417: CRITICAL: (levelname)s: This is a critical message
+2022-04-04 21:28:12,710: DEBUG: (levelname)s: This is a debug message
+2022-04-04 21:28:12,711: INFO: (levelname)s: This is a info message
+2022-04-04 21:28:12,711: WARNING: (levelname)s: This is a warning message
+2022-04-04 21:28:12,711: ERROR: (levelname)s: This is a error message
+2022-04-04 21:28:12,711: CRITICAL: (levelname)s: This is a critical message

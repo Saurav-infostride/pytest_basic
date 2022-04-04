@@ -1,0 +1,11 @@
+WARNING:root:This is a warning message
+ERROR:root:This is a error message
+CRITICAL:root:This is a critical message
+WARNING:root:This is a warning message
+ERROR:root:This is a error message
+CRITICAL:root:This is a critical message
+2022-04-04 19:02:24,916: DEBUG: (levelname)s: This is a debug message
+2022-04-04 19:02:24,916: INFO: (levelname)s: This is a info message
+2022-04-04 19:02:24,916: WARNING: (levelname)s: This is a warning message
+2022-04-04 19:02:24,916: ERROR: (levelname)s: This is a error message
+2022-04-04 19:02:24,916: CRITICAL: (levelname)s: This is a critical message
