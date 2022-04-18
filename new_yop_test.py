@@ -1,25 +1,24 @@
 import time
 import pytest
-import random
-import string
 from selenium.webdriver.common.by import By
+
 
 @pytest.mark.usefixtures("init_driver") 
 class BaseTest():
     pass
 
 class TestHubSpot(BaseTest):
-    emailSubject1 = ''.join(random.choices(string.ascii_lowercase, k=10))
-    print(emailSubject1)
-    emailMessage2 = ''.join(random.choices(string.ascii_lowercase, k=50))
-    print(emailMessage2)
     @pytest.mark.parametrize(  
         "emailFrom, emailTo, emailSubject, emailMessage",
         [
-            ("jhonny@yopmail.com", "saurav@yopmail.com", "Hello, their", "testing on Yopmail"),
+            ("jhonny@yopmail.com", "Saurav@yopmail.com", "Ignore it, only for testing purpose", "For testing purpose"),
+            ("jhonny@yopmail.com", "Bob@yopmail.com", "Ignore it, only for testing purpose", "For testing purpose"),
+            ("jhonny@yopmail.com", "Jake@yopmail.com", "Ignore it, only for testing purpose", "For testing purpose"),
+            ("jhonny@yopmail.com", "Jack@yopmail.com", "Ignore it, only for testing purpose", "For testing purpose"),
+            ("jhonny@yopmail.com", "Tommy@yopmail.com", "Ignore it, only for testing purpose", "For testing purpose"),
         ]
     )
-    def test_sendEmail(self, emailFrom, emailTo, emailSubject, emailMessage):
+    def test_Yop_sendEmail(self, emailFrom, emailTo, emailSubject, emailMessage):
         self.driver.get("https://yopmail.com/en/")
         self.driver.find_element(By.XPATH, "//*[@id='login']").send_keys(emailFrom)
         self.driver.find_element(By.XPATH, "//*[@class='material-icons-outlined f36']").click()
@@ -38,16 +37,19 @@ class TestHubSpot(BaseTest):
         "enterEmail,",
         [
             ("saurav@yopmail.com"),
+            ("Bob@yopmail.com"),
+            ("Jake@yopmail.com"),
+            ("Jack@yopmail.com"),
+            ("Tommy@yopmail.com"),
         ]
     )
 
     def test_receiveEmail(self,enterEmail):
-        expected_subject = "Hello, their"
+        expected_subject = "Ignore it, only for testing purpose"
         expectedEmail = "<jhonny@yopmail.com>"
         self.driver.get("https://yopmail.com/en/")
         self.driver.find_element(By.XPATH, "//*[@id='login']").send_keys(enterEmail)
         self.driver.find_element(By.XPATH, "//*[@class='material-icons-outlined f36']").click()
-        time.sleep(5)
         self.driver.switch_to.frame("ifmail")
         receivedEmailFrom = (self.driver.find_element(By.XPATH,"//span[@class='ellipsis b']").text)
         receivedSubject = (self.driver.find_element(By.XPATH, "//div[@class='ellipsis nw b f18']").text)
@@ -55,5 +57,3 @@ class TestHubSpot(BaseTest):
         print(receivedEmailFrom)
         assert receivedSubject == expected_subject
         print(receivedSubject)
-
-

@@ -1,5 +1,4 @@
 import xlrd
-import XLUtils
 path = r"C://Users//SauravSharma//Pytest//classes//TestData.xlsx"
 
 workbook = xlrd.open_workbook(path)
