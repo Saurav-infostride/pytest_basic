@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 class BaseTest():
     pass
 
-class TestHubSpot(BaseTest):
+class TestHubSpot(BaseTest): 
 
     def test_sendEmail(self):
         path = r"C://Users//SauravSharma//Pytest//classes//yopmailTestData.xlsx"

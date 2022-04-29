@@ -15,6 +15,6 @@ class TestHeadLess(BaseTest):
         options = Options()
         options.headless = True
         options.add_argument("--window-size=1920,1200")
-        self.driver.get("https://www.nintendo.com/")
+        self.driver.get("https://giftshop.redcross.org.uk/collections/new-in")
         print(self.driver.page_source)
         self.driver.quit()
